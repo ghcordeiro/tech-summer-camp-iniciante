@@ -1,5 +1,5 @@
 interface IBhaskaraResponse {
-  x1?: number, 
+  x1?: number,
   x2?: number
 }
 
@@ -17,26 +17,28 @@ interface IBhaskaraResponse {
  * @example Input: a: 10, b: 20.1 c: 5.1, 
  *          Output: x1: -0.2978, x2: -1.7121
  */
- export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => {
+export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
 
   var delta = (b * b) - 4 * a * c;
 
-  document.write("Valor de Delta => " + delta + "<br/><br/>");
-
   if (delta < 0) {
-    document.write("Para Delta negativo, não existem raízes reais. <br/>");
-  } else {
-    document.write("Para Delta positivo, raízes diferentes: <br/>");
+    console.log("Delta negativo raízes pertencem ao plano imaginário")
+    return ({ x1: 0, x2: 0 })
+  } 
+  else {
+    console.log("Delta positivo raízes pertencem ao plano real");
+
+    console.log("Para Delta positivo, raízes diferentes: <br/>");
+
+    var coeficiente1 = (-b + Math.sqrt(delta)) / (2 * a);
+    var coeficiente2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+    var root1 = parseFloat(coeficiente1.toFixed(4));
+    var root2 = parseFloat(coeficiente2.toFixed(4));
+
+    return ({ x1: root1, x2: root2 })
+
   }
-
-  document.write("Para Delta positivo, raízes diferentes: <br/>");
-
-  var coeficiente1 = (-b + Math.sqrt(delta)) / (2 * a);
-  var coeficiente2 = (-b - Math.sqrt(delta)) / (2 * a);
-
-  document.write("x' = " + coeficiente1 + "<br/>");
-  document.write("x'' = " + coeficiente2 + "<br/>");
-
-  return ({ x1: coeficiente1 , x2: coeficiente2  })
+ 
 }

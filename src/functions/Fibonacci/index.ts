@@ -8,15 +8,49 @@
  */
 export const fibonacci = (N: number): Array<number> => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
-  var i;
-  var fib = []; // Initialize array!
 
-  fib[0] = 0;
-  fib[1] = 1;
-  for (i = 2; i <= N; i++) {
-    // Next fibonacci number = previous + one before previous
-    // Translated to JavaScript:
-    fib[i] = fib[i - 2] + fib[i - 1];
+  console.log("Digite um número natural maior que zero")
+
+  if (N < 0) {
+    console.log("Número inválido")
+    return fibonacci(N)
+
   }
-  return fib
+  else if (N == 0) {
+
+    console.log("Número inválido")
+    return fibonacci(N)
+
+  }
+  else if (N == 1) {
+
+    console.log("Número inválido")
+    return fibonacci(N)
+
+  }
+  else {
+
+
+    var num1 = 0, num2 = 1, aux;
+
+    var fib = [N];
+
+    fib[0] = 0;
+
+    fib[1] = 1;
+
+    for (var i = 2; i < N; i++){
+      aux = num1;
+      num1 = num2;
+      num2 = num1 + aux;
+      fib[i] = num2;
+    }    
+
+    return fib
+  }
+
+
+
+
+
 }
