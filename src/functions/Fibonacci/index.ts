@@ -8,4 +8,15 @@
  */
 export const fibonacci = (N: number): Array<number> => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
+  var i;
+  var fib = []; // Initialize array!
+
+  fib[0] = 0;
+  fib[1] = 1;
+  for (i = 2; i <= N; i++) {
+    // Next fibonacci number = previous + one before previous
+    // Translated to JavaScript:
+    fib[i] = fib[i - 2] + fib[i - 1];
+  }
+  return fib
 }
