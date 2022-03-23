@@ -8,6 +8,7 @@
  */
 
 export const fibonacci = (N: number): Array<number> => {
+  if (N < 0) return [];
   if (N === 0 || N === 1) return [N];
 
   let result: Array<number> = [0, 1];

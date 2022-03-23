@@ -24,8 +24,15 @@ export const bhaskara = (
 ): IBhaskaraResponse => {
   const delta = b * b - 4 * a * c;
 
-  const x1 = parseFloat(((-b + Math.sqrt(delta)) / (2 * a)).toFixed(4));
-  const x2 = parseFloat(((-b - Math.sqrt(delta)) / (2 * a)).toFixed(4));
+  let x1, x2;
+
+  if (delta < 0 || a == 0) {
+    x1 = undefined;
+    x2 = undefined;
+  } else {
+    x1 = Number(((-b + Math.sqrt(delta)) / (2 * a)).toFixed(4));
+    x2 = Number(((-b - Math.sqrt(delta)) / (2 * a)).toFixed(4));
+  }
 
   const result = { x1: x1, x2: x2 };
 
