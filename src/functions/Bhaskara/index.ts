@@ -19,18 +19,13 @@ interface IBhaskaraResponse {
  */
 export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
-
+  // Quando o delta não for possivel calcular, deve retornar undefined para x1 e x2
   var delta = (b * b) - 4 * a * c;
 
   if (delta < 0) {
-    console.log("Delta negativo raízes pertencem ao plano imaginário")
     return ({ x1: undefined, x2: undefined })
-  } 
+  }
   else {
-    console.log("Delta positivo raízes pertencem ao plano real");
-
-    console.log("Para Delta positivo, raízes diferentes: <br/>");
-
     var coeficiente1 = (-b + Math.sqrt(delta)) / (2 * a);
     var coeficiente2 = (-b - Math.sqrt(delta)) / (2 * a);
 
@@ -38,7 +33,6 @@ export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => 
     var root2 = parseFloat(coeficiente2.toFixed(4));
 
     return ({ x1: root1, x2: root2 })
-
   }
- 
+
 }

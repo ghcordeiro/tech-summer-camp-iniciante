@@ -9,8 +9,6 @@
 export const fibonacci = (N: number): Array<number> => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
 
-  console.log("Digite um número natural maior que zero")
-
   var fib = [N];
 
   fib[0] = 0;
@@ -18,14 +16,11 @@ export const fibonacci = (N: number): Array<number> => {
   fib[1] = 1;
 
   if (N < 0) {
-    console.log("Número inválido")
     fib = [];
     return fib
 
   }
   else if (N == 0) {
-
-    console.log("Número inválido")
     fib = [];
     return fib;
 
@@ -49,9 +44,4 @@ export const fibonacci = (N: number): Array<number> => {
 
     return fib
   }
-
-
-
-
-
 }
