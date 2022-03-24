@@ -24,7 +24,7 @@ export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => 
 
   if (delta < 0) {
     console.log("Delta negativo raízes pertencem ao plano imaginário")
-    return ({ x1: 0, x2: 0 })
+    return ({ x1: undefined, x2: undefined })
   } 
   else {
     console.log("Delta positivo raízes pertencem ao plano real");
