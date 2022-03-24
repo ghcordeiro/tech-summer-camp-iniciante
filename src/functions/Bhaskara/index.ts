@@ -24,6 +24,9 @@ export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => 
 
   if (delta < 0) {
     return ({ x1: undefined, x2: undefined })
+  } else if (a == 0) {
+
+    return ({ x1: undefined, x2: undefined })
   }
   else {
     var coeficiente1 = (-b + Math.sqrt(delta)) / (2 * a);
