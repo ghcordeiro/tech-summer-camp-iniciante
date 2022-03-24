@@ -21,7 +21,15 @@ interface IBhaskaraResponse {
   let coeficiente1;
   let coeficiente2;
   let delta = (b * b) - 4 * a * c;
-  coeficiente1 = ((-b + Math.sqrt(delta)) / (2 * a)).toFixed(4);
-  coeficiente2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(4); 
-  return  { x1: Number(coeficiente1), x2: Number(coeficiente2) }  ;
+
+  if (delta < 0 || a === 0) {
+    coeficiente1 = undefined;
+    coeficiente2 = undefined;
+
+  } else {
+    coeficiente1 = Number(((-b + Math.sqrt(delta)) / (2 * a)).toFixed(4));
+    coeficiente2 = Number(((-b - Math.sqrt(delta)) / (2 * a)).toFixed(4)); 
+    
+  }
+  return  { x1: coeficiente1, x2: coeficiente2 }  ;
 }
