@@ -8,29 +8,20 @@
  */
 export const fibonacci = (N: number): Array<number> => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
-
-  console.log("Digite um número natural maior que zero")
-
+  // Utilizar essa função com recursividade, está dando erro no Node,
+  // pois ela está sendo chamada várias vezes de forma descontrolada,
+  // tenta achar uma outra solução sem utilizar recursividade, pois deve
+  // retornar um array com todos os valores até o valor do número que você 
+  // receber por parâmetro.
   if (N < 0) {
-    console.log("Número inválido")
+    return fibonacci(N)
+  } else if (N === 0) {
     return fibonacci(N)
 
-  }
-  else if (N == 0) {
-
-    console.log("Número inválido")
+  } else if (N === 1) {
     return fibonacci(N)
 
-  }
-  else if (N == 1) {
-
-    console.log("Número inválido")
-    return fibonacci(N)
-
-  }
-  else {
-
-
+  } else {
     var num1 = 0, num2 = 1, aux;
 
     var fib = [N];
@@ -48,9 +39,4 @@ export const fibonacci = (N: number): Array<number> => {
 
     return fib
   }
-
-
-
-
-
 }
