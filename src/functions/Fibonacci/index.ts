@@ -10,8 +10,12 @@
   let number = new Array();
   let proximo = 1;
   let atual = 0;
+
+  if (N === 0 || N === 1) {
+    return [N];
+  }
   
-  for(let i = 0; i < N-1; i++) {    
+  for(let i = 0; i < N-1; i++) {       
     if(i === 0){
       number.push(0);    
     }
