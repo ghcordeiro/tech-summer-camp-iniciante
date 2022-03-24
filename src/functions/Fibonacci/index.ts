@@ -11,8 +11,8 @@
   let proximo = 1;
   let atual = 0;
 
-  if (N === 0 || N === 1) {
-    return [N];
+  if ( N === 1) {
+    return [0];
   }
   
   for(let i = 0; i < N-1; i++) {       
