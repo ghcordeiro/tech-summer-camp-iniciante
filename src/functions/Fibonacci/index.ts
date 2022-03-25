@@ -12,7 +12,7 @@ export const fibonacci = (N: number): Array<number> => {
   let num = 0
   let proxNum = 1
   
-  while(resultado.length <= N){
+  while(resultado.length <= N -1){
   
     resultado.push(num)
       
