@@ -8,4 +8,19 @@
  */
 export const fibonacci = (N: number): Array<number> => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
+  let resultado = []
+  let num = 0
+  let proxNum = 1
+  
+  while(resultado.length <= N){
+  
+    resultado.push(num)
+      
+    proxNum += num
+    num = proxNum - num 
+      
+  }
+  
+  
+  return resultado
 }

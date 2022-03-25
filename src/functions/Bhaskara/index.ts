@@ -19,5 +19,18 @@ interface IBhaskaraResponse {
  */
 export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => {
   // TODO: Implementar a função e testar a chamada dela no index.ts
- 
+  
+
+  let delta = Math.pow(b,2) - 4 * a * c
+    
+  let value1 = ((-b + Math.sqrt(delta)) / (2 * a)).toFixed(4)
+  
+  
+  let value2 = ((-b - Math.sqrt(delta)) / (2 * a)).toFixed(4)
+
+  
+
+  return ({x1: Number(value1) ,x2: Number(value2)})
+
+  
 }
