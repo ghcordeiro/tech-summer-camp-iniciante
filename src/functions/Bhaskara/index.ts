@@ -18,6 +18,13 @@ interface IBhaskaraResponse {
  *          Output: x1: -0.2978, x2: -1.7121
  */
 export const bhaskara = (a: number, b: number, c: number): IBhaskaraResponse => {
-  // TODO: Implementar a função e testar a chamada dela no index.ts
- 
+  let delta, raiz;
+  raiz = (b * b) - (4 * a * c);
+  delta = Math.pow(raiz, .5);
+
+  if (raiz <= 0 || a == 0) {
+    return { x1: undefined, x2: undefined };
+  } else {
+    return { x1: Number(((-b + delta) / (2 * a)).toFixed(4)), x2: Number(((-b - delta) / (2 * a)).toFixed(4)) };
+  }
 }

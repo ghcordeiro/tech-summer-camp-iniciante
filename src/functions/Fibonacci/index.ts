@@ -7,5 +7,14 @@
  *          Output: [0, 1, 1, 2, 3]
  */
 export const fibonacci = (N: number): Array<number> => {
-  // TODO: Implementar a função e testar a chamada dela no index.ts
+  let proximo, anterior = 0, atual = 1;
+  const result = []
+  for (let i = 1; i <= N; i++) {
+    if (i == N) result.push(anterior);
+    else result.push(anterior);
+    proximo = anterior + atual;
+    anterior = atual;
+    atual = proximo;
+  }
+  return result;
 }
